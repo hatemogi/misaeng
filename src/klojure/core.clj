@@ -2,7 +2,6 @@
       :author "김대현"}
     klojure.core)
 
-
 (def
   ^{:arglists '([& 요소들])
     :doc "요소들을 담고 있는 리스트를 새로 만든다."
@@ -22,27 +21,28 @@
 (def
   ^{:macro true
     :added "1.0"}
-  함 (fn* fn [&form &env & decl]
+  함 (fn* 함 [&form &env & decl]
           (.withMeta ^clojure.lang.IObj (cons 'fn* decl)
                      (.meta ^clojure.lang.IMeta &form))))
 
-(defmacro 매크로 [매크로명 인자 & 본문]
-  `(defmacro ~매크로명 ~인자 ~@본문))
+(defmacro 매크로
+  "defmacro를 그대로 사용"
+  [& 선언부]
+  (cons 'defmacro 선언부))
 
-(매크로 매크로확장-1 [본문]
-  `(macroexpand-1 ~본문))
+(매크로 대응
+  "단순한 1:1 대응을 위한 매크로. 단순히 매크로로 치환된다."
+  [한글명 심볼]
+  (리스트 '매크로 한글명 '[& 선언부]
+    (리스트 'cons (리스트 'quote 심볼) '선언부)))
 
-(매크로 정의 [심볼 값]
-  `(def ~심볼 ~값))
+(대응 매크로확장 macroexpand)
+(대응 매크로확장-1 macroexpand-1)
 
-(매크로 함수 [함수명 인자 & 본문]
-  `(defn ~함수명 ~인자 ~@본문))
-
-(매크로 만약
-  ([조건 참일때]
-    `(if ~조건 ~참일때))
-  ([조건 참일때 거짓일때]
-    `(if ~조건 ~참일때 ~거짓일때)))
+(대응 정의 def)
+(대응 함수 defn)
+(대응 함수- defn-)
+(대응 만약 if)
 
 (정의 증가 inc)
 (정의 감소 dec)
