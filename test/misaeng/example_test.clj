@@ -1,19 +1,17 @@
-(ns misaeng.core-test
+(ns misaeng.example-test
   (:require [misaeng.core :refer :all]
-            [misaeng.test :refer :all]))
+            [misaeng.test :refer :all]
+            [misaeng.example :refer :all]))
 
-(실험함수 클로저핵심
-  (실험 "가정(let)"
-    (확인 (= 7
-             (가정 [x 5]
-                   (+ 2 x)))))
-  (실험 "부분함수(partial)"
-    (확인 (함수? (부분 * 3)))
-    (확인 (= 8 ((부분 + 5) 3))))
-  (실험 "적용(apply)"
-    (확인 (= 6 (적용 + [1 2 3]))))
-  (실험 "범위(range)"
-    (확인 (= [0 1 2 3 4 5 6 7] (범위 8)))
-    (확인 (= [1 2 3 4 5] (범위 1 6))))
-  (실험 "필터(filter)"
-    (확인 (= [2 4 6] (필터 짝수? (범위 1 8))))))
+(실험함수 예제실험
+  (실험 "계승(factorial)"
+    (확인* [x y] (= (계승 x) y)
+           0 1
+           1 1
+           2 2
+           3 6
+           4 24
+           5 120))
+  (실험 "계승(factorial) 적용 함수 버전"
+    (확인 (= (맵 계승 (범위 100))
+             (맵 계승-적용 (범위 100))))))
