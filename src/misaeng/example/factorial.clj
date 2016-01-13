@@ -1,5 +1,5 @@
-(ns misaeng.example
-  (:require [misaeng.core :refer :all]))
+(ns misaeng.example.factorial
+  (:use [misaeng.core]))
 
 (함수 자연수? [n]
   (논리곱 (정수? n)

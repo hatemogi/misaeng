@@ -1,7 +1,7 @@
-(ns misaeng.example-test
-  (:require [misaeng.core :refer :all]
-            [misaeng.test :refer :all]
-            [misaeng.example :refer :all]))
+(ns misaeng.example.factorial-test
+  (:use [misaeng.core]
+        [misaeng.test]
+        [misaeng.example.factorial]))
 
 (실험함수 예제실험
   (실험 "계승(factorial)"
