@@ -8,7 +8,7 @@
   알고리즘 문제 해결 전략 194p., 구종만 지음, 인사이트 출판"
   [^String s]
   (가정함 [(f [^StringReader sr]
-              (가정 [첫자 (-> sr .read char)]
+              (가정 [첫자 (char (.read sr))]
                 (만약 (or (= \b 첫자) (= \w 첫자))
                       (str 첫자)
                       (가정 [위왼 (f sr)
