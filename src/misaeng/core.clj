@@ -77,6 +77,7 @@
 (매크로대응 참이면 when)
 (매크로대응 거짓이면 when-not)
 (매크로대응 조건 cond)
+(매크로대응 조건p condp)
 
 (매크로대응 필요 require)
 (매크로대응 참조 refer)
@@ -86,6 +87,7 @@
 
 (매크로대응 미래 future)
 (매크로대응 지연 delay)
+(매크로대응 시간 time)
 
 (정의 부정 not)
 (정의 리스트 list)
@@ -110,8 +112,8 @@
 (정의 최대 max)
 (정의 최소 min)
 (정의 정수? integer?)
-(정의 양수? pos?)
-(정의 음수? neg?)
+(정의 양? pos?)
+(정의 음? neg?)
 (정의 영? zero?)
 (정의 짝수? even?)
 (정의 홀수? odd?)
@@ -137,3 +139,4 @@
 (정의 빈? empty?)
 (정의 빈 empty)
 (정의 약속 promise)
+(정의 메모이즈 memoize)
