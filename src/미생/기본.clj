@@ -65,15 +65,15 @@
 (매크로대응 매크로확장 macroexpand)
 (매크로대응 매크로확장-1 macroexpand-1)
 (매크로대응 주석 comment)
-(매크로대응 만약-가정 if-let)
+(매크로대응 만약가정 if-let)
 (매크로대응 가정함 letfn)
 
 (매크로대응 함수 defn)
 (매크로대응 함수- defn-)
 (매크로대응 프로토콜 defprotocol)
-(매크로대응 프로토콜-확장 extend-protocol)
+(매크로대응 프로토콜확장 extend-protocol)
 
-(매크로대응 만약-거짓 if-not)
+(매크로대응 만약거짓 if-not)
 (매크로대응 참이면 when)
 (매크로대응 거짓이면 when-not)
 (매크로대응 조건 cond)
