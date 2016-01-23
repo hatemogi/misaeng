@@ -56,6 +56,8 @@
 
   참조: http://misaeng-lang.org/특별식#정의")
 
+(특별대응 한번정의 defonce)
+
 (특별대응 묶음 do)
 (특별대응 루프 loop)
 (특별대응 재귀 recur)

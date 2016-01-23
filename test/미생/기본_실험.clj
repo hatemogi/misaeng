@@ -1,8 +1,8 @@
-(ns misaeng.core-test
-  (:require [misaeng.core :refer :all]
-            [misaeng.test :refer :all]))
+(ns 미생.기본-실험
+  (:use [미생.기본]
+        [미생.실험]))
 
-(실험함수 클로저핵심
+(실험함수 미생핵심실험
   (실험 "가정(let)"
     (확인 (= 7
              (가정 [x 5]
