@@ -12,7 +12,7 @@
          (.getEncoded)
          (.encodeToString (Base64/getEncoder)))))
 
-(실험함수 PBKDF2실험
+(실험정의 PBKDF2실험
   (실험 "안전한 해시 함수, PBKDF2"
     (확인* [raw password salt] (= raw (pbkdf2 password salt 100 160))
            "tZAN6pbki7Xbhzo1tlSWauh1W3k=" "password" "salt1234"

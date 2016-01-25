@@ -1,6 +1,6 @@
-(ns misaeng.example.quadtree
-  (:use [misaeng.core]
-        [misaeng.test])
+(ns 미생.예제.쿼드트리
+  (:use [미생.기본]
+        [미생.실험])
   (:import [java.io StringReader]))
 
 (함수 위아래반전
@@ -18,7 +18,7 @@
                         (str "x" 아래왼 아래오른 위왼 위오른)))))]
     (f (StringReader. s))))
 
-(실험함수 위아래반전실험
+(실험정의 위아래반전실험
   (실험 "반전결과확인"
     (확인* [x y] (= y (위아래반전 x))
            "b" "b"
