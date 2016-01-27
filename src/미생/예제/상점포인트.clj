@@ -2,33 +2,23 @@
       :author "김대현"}
     미생.예제.상점포인트
   (:use [미생.기본]
-        [미생.실험]
-        [clojure.string :only [split join trim]])
-  (:import [java.io BufferedReader StringReader]))
+        [미생.실험])
+  (:import [java.io BufferedReader BufferedWriter StringReader StringWriter]))
 
-(함수 한문제풀이 [포인트 가격모음]
-  (만약-가정 [기준 (첫째 가격모음)]
-    (만약-가정 [짝 (첫째 (필터 #(= 포인트 (+ 기준 %)) (나머지 가격모음)))]
-      (join " " (정렬 [기준 짝]))
-      (재귀 포인트 (나머지 가격모음)))
-    "답없음"))
+(함수 풀이 [인덱스 크레딧 값들]
+  (가정 [기준값 (첫째 값들)
+         후보 (나머지 값들)]
+    (가정 [짝인덱스 (.indexOf 후보 (- 크레딧 기준값))]
+      (만약-거짓 (음? 짝인덱스)
+        [인덱스 (+ 인덱스 1 짝인덱스)]
+        (재귀 (증가 인덱스) 크레딧 후보)))))
 
-(함수 여러문제풀이 [숫자열모음]
-  (맵 #(가정 [[[포인트] _ 가격리스트] %]
-         (한문제풀이 포인트 가격리스트))
-      (분할 3 숫자열모음)))
-
-(함수 문자열->숫자모음 [한줄]
-  (맵 #(Long. %) (split (trim 한줄) #"\s+")))
-
-(함수 상점포인트문제 [입력]
-  (맵 #(문 "Case #" %1 ": " %2)
-      (iterate 증가 1)
-      (여러문제풀이 (맵 문자열->숫자모음 (나머지 (line-seq 입력))))))
-
-(함수 답안출력 [입력]
-  (순차 [답안 (상점포인트문제 입력)]
-    (println 답안)))
+(함수- main []
+  (누차 [n (read-string (read-line))]
+    (가정 [[크레딧 _ 값들] (반복해서 3 read-line)
+           값들 (->> (re-seq #"\d+" 값들) (맵 read-string))
+           답 (풀이 1 (read-string 크레딧) 값들)]
+      (println (str "Case #" (증가 n) ": " (첫째 답) " " (둘째 답))))))
 
 (정의 예제입력 "3
 100
@@ -41,11 +31,15 @@
 8
 2 1 9 4 4 56 90 3")
 
-(정의 예제답안 "Case #1: 25 75
-Case #2: 50 150
-Case #3: 4 4")
+(정의 예제답안 "Case #1: 2 3
+Case #2: 1 4
+Case #3: 4 5
+")
 
 (실험정의 상점포인트실험
   (실험 "예제확인"
-    (가정 [입력 (BufferedReader. (StringReader. 예제입력))]
-      (확인 (= (split 예제답안 #"\n") (상점포인트문제 입력))))))
+    (가정 [출력 (StringWriter.)]
+      (바인딩 [*in* (BufferedReader. (StringReader. 예제입력))
+               *out* (BufferedWriter. 출력)]
+        (main))
+      (확인 (= 예제답안 (.toString 출력))))))
