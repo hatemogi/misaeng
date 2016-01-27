@@ -90,15 +90,22 @@
 (매크로대응 지연 delay)
 (매크로대응 시간 time)
 (매크로대응 바인딩 binding)
+(매크로대응 누차 dotimes)  ; 여러번
+(매크로대응 순차 doseq)  ; 차례로
+(매크로대응 다중메소드 defmulti)  ; 멀티메소드
+(매크로대응 메소드정의 defmethod)
+(매크로대응 지연-열 lazy-seq)
 
 (정의 부정 not)
 (정의 부정= not=)
 (정의 리스트 list)
 (정의 리스트* list*)
 (정의 리스트? list?)
-(정의 적용 apply)
+(정의 적용 apply)  ; 대입
 (정의 증가 inc)
 (정의 감소 dec)
+(정의 증가' inc')
+(정의 감소' dec')
 (정의 맵 map)
 (정의 리듀스 reduce)
 (정의 참 true)
@@ -107,7 +114,9 @@
 (정의 참? true?)
 (정의 거짓? false?)
 (정의 공? nil?)
+(정의 기호 symbol)
 (정의 기호? symbol?)
+(정의 키워드 keyword)
 (정의 키워드? keyword?)
 (정의 인스턴스? instance?)
 (정의 맵? map?)
@@ -119,6 +128,7 @@
 (정의 최대 max)
 (정의 최소 min)
 (정의 정수? integer?)
+(정의 유리수? rational?)
 (정의 양? pos?)
 (정의 음? neg?)
 (정의 영? zero?)
@@ -126,7 +136,7 @@
 (정의 홀? odd?)
 (정의 부분 partial)
 (정의 조합 comp)
-(정의 필터 filter)
+(정의 필터 filter)  ; 여과
 (정의 가짐 take)
 (정의 버림 drop)
 (정의 반복 repeat)
@@ -139,7 +149,7 @@
 (정의 나머지 rest)
 (정의 마지막 last)
 (정의 큰수 bigint)
-(정의 함? fn?)
+(정의 함? fn?)  ; ㅎㅅ
 (정의 몫 quot)
 (정의 나머지값 rem)
 (정의 병합 merge)
@@ -151,3 +161,18 @@
 (정의 결합! conj!)
 (정의 분리 disj)
 (정의 분리! disj!)
+(정의 순방 doall)
+(정의 순행 dorun)
+(정의 열 seq)
+(정의 열? seq?)
+(정의 순열 sequence)
+(정의 서식 format)
+(정의 문 str)
+(정의 문자열? string?)
+(정의 실행! run!)
+(정의 섞기 shuffle)
+(정의 항등 identity)  ; https://ko.wikipedia.org/wiki/항등_함수
+(정의 상수 constantly)  ; https://ko.wikipedia.org/wiki/상수_함수
+(정의 분할 partition)
+(정의 모두분할 partition-all)
+(정의 정렬 sort)

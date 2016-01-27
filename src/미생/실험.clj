@@ -10,6 +10,9 @@
 (매크로대응 실험포함 clojure.test/with-test)
 (매크로대응 실험설정 clojure.test/use-fixtures)
 
+(메소드정의 assert-expr '예외발생? [msg form]
+  (assert-expr msg (cons 'thrown? (rest form))))
+
 (정의 함수? function?)
 (정의 실험시행 run-tests)
 (정의 모든실험시행 run-all-tests)
