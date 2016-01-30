@@ -56,9 +56,9 @@
 
   참조: http://misaeng-lang.org/특별식#정의")
 
-(특별대응 묶음 do)
+(특별대응 작용 do)
 (특별대응 루프 loop)
-(특별대응 재귀 recur)
+(특별대응 재귀 recur ([표현*]) "재귀호출.")
 (특별대응 예외발생 throw)
 
 (매크로대응 매크로 defmacro)
@@ -135,7 +135,7 @@
 (정의 짝? even?)
 (정의 홀? odd?)
 (정의 부분 partial)
-(정의 조합 comp)
+(정의 합성 comp)
 (정의 필터 filter)  ; 여과
 (정의 가짐 take)
 (정의 버림 drop)
@@ -146,7 +146,8 @@
 (정의 개수 count)
 (정의 첫째 first)
 (정의 둘째 second)
-(정의 나머지 rest)
+(정의 잔여 rest)
+(정의 다음 next)
 (정의 마지막 last)
 (정의 큰수 bigint)
 (정의 함? fn?)  ; ㅎㅅ
@@ -176,3 +177,5 @@
 (정의 분할 partition)
 (정의 모두분할 partition-all)
 (정의 정렬 sort)
+(정의 비교 compare)
+(정의 양분 split-at)
