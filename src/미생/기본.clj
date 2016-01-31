@@ -146,6 +146,7 @@
 (정의 개수 count)
 (정의 첫째 first)
 (정의 둘째 second)
+(정의 n째 nth)
 (정의 잔여 rest)
 (정의 다음 next)
 (정의 마지막 last)
