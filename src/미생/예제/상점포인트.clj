@@ -16,7 +16,7 @@
 (함수- main []
   (누차 [n (read-string (read-line))]
     (가정 [[크레딧 _ 값들] (반복해서 3 read-line)
-           값들 (맵 read-string (re-seq #"\d+" 값들))
+           값들 (사상 read-string (re-seq #"\d+" 값들))
            답 (풀이 1 (read-string 크레딧) 값들)]
       (println (str "Case #" (증가 n) ": " (첫째 답) " " (둘째 답))))))
 
