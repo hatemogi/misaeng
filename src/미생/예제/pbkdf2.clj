@@ -1,6 +1,6 @@
 (ns 미생.예제.pbkdf2
   (:use [미생.기본]
-        [미생.실험])
+        [미생.검사])
   (:import [javax.crypto SecretKeyFactory]
            [javax.crypto.spec PBEKeySpec]
            [java.util Base64]))
@@ -12,8 +12,8 @@
          (.getEncoded)
          (.encodeToString (Base64/getEncoder)))))
 
-(실험정의 PBKDF2실험
-  (실험 "안전한 해시 함수, PBKDF2"
+(검사정의 PBKDF2검사
+  (검사 "안전한 해시 함수, PBKDF2"
     (확인* [raw password salt] (= raw (pbkdf2 password salt 100 160))
            "tZAN6pbki7Xbhzo1tlSWauh1W3k=" "password" "salt1234"
            "I+0idwzKyHtv9INcaB3Sc5Sj2LQ=" "password" "1234salt"

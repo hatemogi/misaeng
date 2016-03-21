@@ -2,7 +2,7 @@
       :author "김대현"}
     미생.예제.상점포인트
   (:use [미생.기본]
-        [미생.실험])
+        [미생.검사])
   (:import [java.io BufferedReader BufferedWriter StringReader StringWriter]))
 
 (함수 풀이 [인덱스 크레딧 값들]
@@ -36,8 +36,8 @@ Case #2: 1 4
 Case #3: 4 5
 ")
 
-(실험정의 상점포인트실험
-  (실험 "예제확인"
+(검사정의 상점포인트검사
+  (검사 "예제확인"
     (가정 [출력 (StringWriter.)]
       (바인딩 [*in* (BufferedReader. (StringReader. 예제입력))
                *out* (BufferedWriter. 출력)]

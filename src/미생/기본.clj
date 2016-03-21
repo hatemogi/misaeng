@@ -73,6 +73,8 @@
 (매크로대응 한번정의 defonce)
 (매크로대응 프로토콜 defprotocol)
 (매크로대응 프로토콜-확장 extend-protocol)
+(매크로대응 레코드 defrecord)
+(매크로대응 선언 declare)
 
 (매크로대응 만약-거짓 if-not)
 (매크로대응 참이면 when)
