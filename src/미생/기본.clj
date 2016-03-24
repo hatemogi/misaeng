@@ -177,8 +177,8 @@
 (정의 문자열? string?)
 (정의 실행! run!)
 (정의 섞기 shuffle)
-(정의 항등 identity)  ; https://ko.wikipedia.org/wiki/항등_함수
-(정의 상수 constantly)  ; https://ko.wikipedia.org/wiki/상수_함수
+(정의 항등함수 identity)  ; https://ko.wikipedia.org/wiki/항등_함수
+(정의 상수함수 constantly)  ; https://ko.wikipedia.org/wiki/상수_함수
 (정의 분할 partition)
 (정의 모두분할 partition-all)
 (정의 정렬 sort)
