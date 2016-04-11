@@ -187,3 +187,5 @@
 (정의 정규식-맞춤 re-matches)
 (정의 정규식-찾기 re-find)
 (정의 정규식-열 re-seq)
+(정의 모두? every?)
+(정의 모두거짓? not-any?)
