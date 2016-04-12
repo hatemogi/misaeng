@@ -1,9 +1,7 @@
 (ns user
   (:use [미생.기본]
-        [미생.검사]
-        [clojure.repl])
-  (:require [clojure.tools.namespace.repl :refer [refresh]]
-            [미생.기본-검사]
+        [미생.검사])
+  (:require [미생.기본-검사]
             [미생.검사-검사]
             [미생.예제.계승]
             [미생.예제.총합]
