@@ -13,6 +13,6 @@
 (메소드정의 assert-expr '예외발생? [msg form]
   (assert-expr msg (cons 'thrown? (rest form))))
 
-(정의 함수? function?)
-(정의 검사하기 run-tests)
-(정의 모든검사하기 run-all-tests)
+(정의* 함수? function?
+       검사하기 run-tests
+       모든검사하기 run-all-tests)

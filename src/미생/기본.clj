@@ -99,93 +99,101 @@
 (매크로대응 메소드정의 defmethod)
 (매크로대응 지연-열 lazy-seq)
 
-(정의 부정 not)
-(정의 부정= not=)
-(정의 리스트 list)
-(정의 리스트* list*)
-(정의 리스트? list?)
-(정의 적용 apply)  ; 대입
-(정의 증가 inc)
-(정의 감소 dec)
-(정의 증가' inc')
-(정의 감소' dec')
-(정의 사상 map)
-(정의 리듀스 reduce)
-(정의 참 true)
-(정의 거짓 false)
-(정의 공 nil)
-(정의 참? true?)
-(정의 거짓? false?)
-(정의 공? nil?)
-(정의 기호 symbol)
-(정의 기호? symbol?)
-(정의 키워드 keyword)
-(정의 키워드? keyword?)
-(정의 인스턴스? instance?)
-(정의 맵? map?)
-(정의 벡터 vector)
-(정의 벡터? vector?)
-(정의 집합 set)
-(정의 집합? set?)
-(정의 해시-집합 hash-set)
-(정의 최대 max)
-(정의 최소 min)
-(정의 정수? integer?)
-(정의 유리수? rational?)
-(정의 분수? ratio?)
-(정의 양? pos?)
-(정의 음? neg?)
-(정의 영? zero?)
-(정의 짝? even?)
 (정의 홀? odd?)
-(정의 부분 partial)
-(정의 합성 comp)
-(정의 필터 filter)  ; 여과
-(정의 가짐 take)
-(정의 버림 drop)
-(정의 반복 repeat)
-(정의 반복해서 repeatedly)
-(정의 중첩 iterate)
-(정의 범위 range)
-(정의 개수 count)
-(정의 첫째 first)
-(정의 둘째 second)
-(정의 n째 nth)
-(정의 잔여 rest)
-(정의 다음 next)
-(정의 마지막 last)
-(정의 큰수 bigint)
-(정의 함? fn?)  ; ㅎㅅ
-(정의 몫 quot)
-(정의 나머지값 rem)
-(정의 병합 merge)
-(정의 빈? empty?)
-(정의 빈 empty)
-(정의 약속 promise)
-(정의 메모하기 memoize)
-(정의 결합 conj)
-(정의 결합! conj!)
-(정의 분리 disj)
-(정의 분리! disj!)
-(정의 순방 doall)
-(정의 순행 dorun)
-(정의 열 seq)
-(정의 열? seq?)
-(정의 순열 sequence)
-(정의 서식 format)
-(정의 문 str)
-(정의 문자열? string?)
-(정의 실행! run!)
-(정의 섞기 shuffle)
-(정의 항등함수 identity)  ; https://ko.wikipedia.org/wiki/항등_함수
-(정의 상수함수 constantly)  ; https://ko.wikipedia.org/wiki/상수_함수
 (정의 분할 partition)
-(정의 모두분할 partition-all)
-(정의 정렬 sort)
-(정의 비교 compare)
-(정의 양분 split-at)
-(정의 정규식-맞춤 re-matches)
-(정의 정규식-찾기 re-find)
-(정의 정규식-열 re-seq)
-(정의 모두? every?)
-(정의 모두거짓? not-any?)
+(정의 리스트 list)
+
+(매크로 정의* [& 정의들]
+  (만약 (홀? (count 정의들))
+    (예외발생 (java.lang.IllegalArgumentException.))
+    (cons '다 (for [[이름 대상] (분할 2 정의들)]
+                (리스트 '정의 이름 대상)))))
+
+(정의*
+ 부정 not
+ 부정= not=
+ 리스트* list*
+ 리스트? list?
+ 적용 apply  ; 대입
+ 증가 inc
+ 감소 dec
+ 증가' inc'
+ 감소' dec'
+ 사상 map
+ 리듀스 reduce
+ 참 true
+ 거짓 false
+ 공 nil
+ 참? true?
+ 거짓? false?
+ 공? nil?
+ 기호 symbol
+ 기호? symbol?
+ 키워드 keyword
+ 키워드? keyword?
+ 인스턴스? instance?
+ 맵? map?
+ 벡터 vector
+ 벡터? vector?
+ 집합 set
+ 집합? set?
+ 해시-집합 hash-set
+ 최대 max
+ 최소 min
+ 정수? integer?
+ 유리수? rational?
+ 분수? ratio?
+ 양? pos?
+ 음? neg?
+ 영? zero?
+ 짝? even?
+ 부분 partial
+ 합성 comp
+ 필터 filter  ; 여과
+ 가짐 take
+ 버림 drop
+ 반복 repeat
+ 반복해서 repeatedly
+ 중첩 iterate
+ 범위 range
+ 개수 count
+ 첫째 first
+ 둘째 second
+ n째 nth
+ 잔여 rest
+ 다음 next
+ 마지막 last
+ 큰수 bigint
+ 함? fn?  ; ㅎㅅ
+ 몫 quot
+ 나머지값 rem
+ 병합 merge
+ 빈? empty?
+ 빈 empty
+ 약속 promise
+ 메모하기 memoize
+ 결합 conj
+ 결합! conj!
+ 분리 disj
+ 분리! disj!
+ 순방 doall
+ 순행 dorun
+ 열 seq
+ 열? seq?
+ 순열 sequence
+ 서식 format
+ 문 str
+ 문자열? string?
+ 실행! run!
+ 섞기 shuffle
+ 항등함수 identity  ; https://ko.wikipedia.org/wiki/항등_함수
+ 상수함수 constantly  ; https://ko.wikipedia.org/wiki/상수_함수
+ 모두분할 partition-all
+ 정렬 sort
+ 비교 compare
+ 양분 split-at
+ 정규식-맞춤 re-matches
+ 정규식-찾기 re-find
+ 정규식-열 re-seq
+ 모두? every?
+ 모두거짓? not-any?)

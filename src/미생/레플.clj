@@ -7,5 +7,5 @@
 (매크로대응 열람 clojure.repl/dir)
 (매크로대응 설명찾기 clojure.repl/find-doc)
 (매크로대응 정의현황 clojure.repl/apropos)
-(정의 pst clojure.repl/pst)
-(정의 demunge clojure.repl/demunge)
+(정의* pst clojure.repl/pst
+       demunge clojure.repl/demunge)
