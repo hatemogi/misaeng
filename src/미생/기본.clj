@@ -106,7 +106,7 @@
 (매크로 정의* [& 정의들]
   (만약 (홀? (count 정의들))
     (예외발생 (java.lang.IllegalArgumentException.))
-    (cons '다 (for [[이름 대상] (분할 2 정의들)]
+    (cons 'do (for [[이름 대상] (분할 2 정의들)]
                 (리스트 '정의 이름 대상)))))
 
 (정의*
@@ -196,4 +196,5 @@
  정규식-찾기 re-find
  정규식-열 re-seq
  모두? every?
- 모두거짓? not-any?)
+ 모두거짓? not-any?
+ 출력 println)
